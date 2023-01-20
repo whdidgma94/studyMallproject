@@ -8,8 +8,7 @@ public class Util {
 
 	static public int getInt() {
 		while (true) {
-			int input = -1;
-			int num= 10;
+			int input = -1;		
 			System.out.print("ют╥б : ");
 			try {
 				input = scan.nextInt();

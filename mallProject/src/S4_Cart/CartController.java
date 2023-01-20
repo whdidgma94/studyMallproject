@@ -37,16 +37,17 @@ public class CartController {
 		while(true) {
 			System.out.println("===[장바구니관리]===");
 			System.out.println("1)장바구니출력 2)구입 3)삭제 0)뒤로가기");
+			ArrayList<Cart> oneCartList = cartDAO.getOneCartList(mallController.getMemberLoginID());
 			int sel = Util.getInt();
 			if (sel == 0) {
 				break;
 			} else if (sel == 1) {
-				ArrayList<Cart> oneCartList = cartDAO.getOneCartList(mallController.getMemberLoginID());
 				cartDAO.printOneCartList(oneCartList);
 			} else if (sel == 2) {
-				
+				cartDAO.clearOneCartList(oneCartList,mallController.getMemberLoginID());
 			} else if (sel == 3) {
-				
+				cartDAO.printOneCartList(oneCartList);
+				cartDAO.removeOneCartList(oneCartList,mallController.getMemberLoginID());
 			} else {
 				System.err.println("입력 오류");
 			}
