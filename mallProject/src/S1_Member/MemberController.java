@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import S2_Item.ItemController;
 import S4_Cart.CartController;
+import S5_Borad.BoardController;
 import S_MyUtil.Util;
 
 public class MemberController {
@@ -15,11 +16,13 @@ public class MemberController {
 	private MemberDAO memberDAO;
 	private ItemController itemController;
 	private CartController cartController;
+	private BoardController boardController;
 	private Scanner scan;
 	public void init(MemberDAO memberDAO){
 		this.memberDAO = memberDAO;
 		itemController = ItemController.getInstance();
 		cartController = CartController.getInstance();
+		boardController = BoardController.getInstance();
 		scan = Util.scan;
 		managerSetting();
 	}
@@ -72,7 +75,7 @@ public class MemberController {
 			}else if(select == 2) {
 				cartController.menuCart();
 			}else if(select == 3) {
-				
+				boardController.menuBoard();
 			}else {
 				System.err.println("입력 오류");
 			}
