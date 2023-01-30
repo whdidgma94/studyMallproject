@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Util {
-	static public  Scanner scan = new Scanner(System.in);
+	public static Scanner scan = new Scanner(System.in);
 
 	static public int getInt() {
 		while (true) {
